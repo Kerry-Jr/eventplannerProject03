@@ -1,0 +1,116 @@
+import React, { Component } from 'react';
+import { Field, reduxForm, SubmissionError } from 'redux-form';
+import { Form, Segment, Button } from 'semantic-ui-react';
+import { required } from 'redux-form-validators';
+import axios from 'axios';
+// import { ADD_USER_TODO, ADD_USER_TODO_ERROR } from '../../actions/types';
+import requireAuth from './../../hoc/requireAuth';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { ADD_USER_EVENT } from '../../actions/types'
+import { getUserEvents } from '../../actions/eventActions'
+// import { getUserTodos, updateCompleteUserTodoById, deleteTodoById } from '../../actions/allTodos';
+
+
+
+class JoinEvent extends Component {
+  // When the user submits the form, send the formValues to /api/auth/signin
+  onSubmit = async (formValues, dispatch) => {
+    console.log(formValues.pin)
+    try {
+      const { data } = await axios.post('/api/event/join', formValues, { headers: { 'authorization': localStorage.getItem('token')}});
+      localStorage.setItem('currentPin', formValues.pin);
+      // localStorage.setItem('token', data.token);
+      // dispatch({ type: ADD_USER_TODO });
+      dispatch({ type: ADD_USER_EVENT })
+      this.props.getUserEvents();
+      
+      this.props.history.push('/usertodos');
+      // this.props.getUserTodos();
+    } catch (e) {
+      throw new SubmissionError({
+        password: 'Wrong pin',
+        _error: 'No event to join!'
+      });
+    }
+  }
+  // set the token coming from data into localStorage under the key 'token'
+  // Dispatch the action to the reducer to set the token as the state for authentication
+  // Redirect the user to the '/counter' route
+  renderEmail = ({ input, meta }) => {
+    return (
+      <Form.Input
+        {...input}
+        fluid
+        error={ meta.touched && meta.error }
+        icon='user'
+        iconPosition='left'
+        autoComplete='off'
+        placeholder='User Name'
+      />
+    )
+  }
+  renderPassword = ({ input, meta }) => {
+    return (
+      <Form.Input
+        {...input}
+        type='password'
+        fluid
+        error={ meta.touched && meta.error }
+        icon='lock'
+        iconPosition='left'
+        autoComplete='off'
+        placeholder='pin'
+      />
+    )
+  }
+  render() {
+    const { handleSubmit, invalid, submitting, submitFailed } = this.props;
+    return (
+      <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
+        <Segment stacked>
+          <Field
+            name='pin'
+            component={this.renderPassword}
+            validate={
+              [
+                required({ msg: 'You must provide a pin' })
+              ]
+            }
+          />
+          <Field
+            name='username'
+            component={this.renderEmail}
+            validate={
+              [
+                required({ msg: 'You must provide a username'})
+              ]
+            }
+          />
+          <Button
+            content='Join Event'
+            color='teal'
+            fluid
+            size='large'
+            type='submit'
+            disabled={ invalid || submitting || submitFailed }
+          />
+        </Segment>
+      </Form>
+    )
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    userEvents: state.event.userEvents,
+  }
+}
+const composedComponent = compose(
+  reduxForm({ form: 'JoinEvent' }),
+  connect(mapStateToProps, { getUserEvents })
+)(JoinEvent)
+
+// export default requireAuth(connect(mapStateToProps)(JoinEvent));
+// export default requireAuth(reduxForm({ form: 'JoinEvent '})(JoinEvent));
+export default requireAuth(composedComponent);

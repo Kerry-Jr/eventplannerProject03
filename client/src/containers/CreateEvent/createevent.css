@@ -1,0 +1,89 @@
+
+.react-datepicker__input-container  {
+    width: 100%;
+
+}
+
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+
+input[name="title"] {
+    width: 50px;
+    height: 50px;
+    box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.15)!important;
+}
+
+input[name="description"] {
+    width: 100px;
+    height: 200px;
+    box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.15)!important;
+
+}
+
+input[name="date"] {
+
+width: 100% !important;
+
+    box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.15)!important;
+
+}
+
+
+
+
+input[name="pin"] {
+
+    box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.15)!important;
+}
+
+
+
+h3, h2 {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+
+}
+
+.eventForm {
+    
+}
+
+.formFields {
+    box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.35)!important;
+}
+
+
+/*.body {*/
+/*    position: fixed;*/
+/*    background-image: repeating-linear-gradient(190deg, red, blue 7%, green 10%);*/
+/*    max-height: 5000px;*/
+
+/*    background: red;*/
+/*    position: relative;*/
+/*    animation: body 5s infinite;*/
+/*}*/
+
+/*@keyframes body {*/
+/*    from {left: 0px;}*/
+/*    to {left: 900px;}*/
+/*}*/
+
+
+/* =============== Styles ================= */
+
+/*font-family: 'Bitter', serif;*/
+/*font-family: 'Fugaz One', cursive;*/
+/*font-family: 'Homemade Apple', cursive;*/
+/*font-family: 'Lato', sans-serif;*/
+/*font-family: 'Merriweather', serif;*/
+/*font-family: 'Monoton', cursive;*/
+/*font-family: 'Pacifico', cursive;*/
+
+.form-headers {
+    font-family: 'Merriweather', serif;
+}
+
+
+
