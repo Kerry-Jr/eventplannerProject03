@@ -17,6 +17,6 @@ app.use(express.json());
 app.use(routes);
 require('./services/passport');
 // Connect database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/events', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://admin 1265327Ksq!@ds125871.mlab.com:25871/heroku_0xn0jnk7', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
 
 app.listen(PORT);
