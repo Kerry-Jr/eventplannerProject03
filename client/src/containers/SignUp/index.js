@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Form, Segment, Button, Grid, GridRow, GridColumn, Container } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
+import './signup.css'
 
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
 
@@ -10,6 +11,7 @@ class SignUp extends Component {
   onSubmit = async (formValues, dispatch) => {
 
     try {
+      console.log('im hit')
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
       dispatch({ type: AUTH_USER, payload: data.token });
@@ -103,14 +105,17 @@ class SignUp extends Component {
                   component={this.renderInput}
                 />
                 <div >
-                  <label>Gender</label>
+                  <Segment>
+                  <label>Gender ( For avatar )</label>
                   <div className='gender-radio'>
                     <label><Field name="Gender" component="input" type="radio" value="male"/> Male</label>
                     <label><Field name="Gender" component="input" type="radio" value="female"/> Female</label>
                     <label><Field name="Gender" component="input" type="radio" value="default"/> Undefined</label>
+
                   </div>
+                  </Segment>
                 </div>
-                <Container>
+                <Container className='signup-radio'>
                   <Grid.Row>
                     <Grid.Column>
                       <Button

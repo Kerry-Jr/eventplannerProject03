@@ -32,11 +32,14 @@ class MessageBoardContainer extends Component {
   }
 
   onSubmit = async (formValues, dispatch) => {
+    const { reset } = this.props;
     try {
       // change the post route here
       // const { data } = await axios.post('/api/dashboard', formValues,  { headers: { 'authorization': localStorage.getItem('token')}});;
       const { data } = await axios.post(`/api/dashboard/comment/${this.props.eventId}`, formValues, { headers: { 'authorization': localStorage.getItem('token') } })
       dispatch({ type: GET_MESSAGE, payload: data });
+      reset('CreateEvent')
+
     } catch (e) {
       throw e;
     }
@@ -80,7 +83,9 @@ class MessageBoardContainer extends Component {
             Event Message Board
           </Header>
           <Comment.Group>
+            <Segment>
             { this.props.messages.map((message,idx) => this.renderMessages(message,idx)) }
+            </Segment>
           </Comment.Group>
         </Segment>
         <Form className='message-posting' size='large' reply onSubmit={handleSubmit(this.onSubmit)}>

@@ -37,12 +37,18 @@ const UserSchema = new Schema({
     ref: 'Message'
   }],
   userName: {
-    type: String,
+    type: String
+
+
   },
   Gender: {
     type: String,
     default: 'https://avatars.dicebear.com/api/bottts/john.svg?mood[]=happy'
-  }
+  },
+  tasks: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Task'
+  }]
 });
 
 UserSchema.methods.toJSON = function() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm, Field, SubmissionError } from 'redux-form';
-import { Form, Segment, Button, Icon, Container } from 'semantic-ui-react';
+import { Form, Segment, Button, Icon, Container, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 // import { compose } from 'redux';
 import { length, required} from 'redux-form-validators';
@@ -10,12 +10,14 @@ import DatePicker from 'react-datepicker';
 import './createevent.css'
 import { compose } from 'redux';
 import "react-datepicker/dist/react-datepicker.css";
-// import { getUserTodos, updateCompleteUserTodoById, deleteTodoById } from '../../actions/allTodos';
-import { getUserEvents } from '../../actions/eventActions'
-// import { getUserTodos, updateCompleteUserTodoById, deleteTodoById } from '../../actions/allTodos';
+
+import { getUserEvents, selectEvent, selectedEvent } from '../../actions/eventActions'
+
 import { ADD_USER_EVENT } from '../../actions/types'
-import { AUTH_USER, ADD_USER_TODO, ADD_USER_TODO_ERROR } from '../../actions/types';
-// import UserTodoListItems from './UserTodoListItems';
+
+
+
+import HorizontalDivider from './../../components/HorizontalDivider';
 
 
 class CreateEvent extends Component {
@@ -40,11 +42,12 @@ class CreateEvent extends Component {
   }
 
   onSubmit = async (formValues, dispatch) => {
-    console.log(formValues);
     try {
       const { data } = await axios.post('/api/event/create', formValues,  { headers: { 'authorization': localStorage.getItem('token')}});
       dispatch({ type: ADD_USER_EVENT })
-      this.props.getUserEvents();
+      await this.props.selectEvent(data._id);
+      // console.log(this.props.specificEvent)
+      // await this.props.selectedEvent(this.props.specificEvent)
       this.props.history.push('/eventsdashboard');
     } catch (e) {
       throw new SubmissionError({
@@ -86,8 +89,14 @@ class CreateEvent extends Component {
   render() {
     const { handleSubmit, invalid, submitting, submitFailed, pristine, reset } = this.props;
     return (
+
+      
       <Container fluid className='body'>
         <Container className='formFields'>
+          <Header as='h2' icon textAlign='center'>
+            <Icon name='add to calendar' circular size='massive' className='list-icon'/>
+            <HorizontalDivider title="Create An Event"/>
+          </Header>
         <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
           <Segment>
             <h2 className='form-headers' align='left'>Name of event</h2>
@@ -122,7 +131,7 @@ class CreateEvent extends Component {
                      ]
                    }
               component={this.renderInput}
-              className='field'
+
             />
             <h3 className='form-headers' align='left'>4-Digit access code</h3>
             <p>This will be used for inviting guest who can update the event.</p>
@@ -172,12 +181,18 @@ class CreateEvent extends Component {
 function mapStateToProps(state) {
   return {
     userEvents: state.event.userEvents,
+    userSpecificEvent: state.event.userSpecificEvent,
+    specificEvent: state.event.specificEvent,
+    specificEventError: state.event.specificEventError,
+    deleteEventError: state.event.deleteEventError,
+    eventCoordinates: state.event.eventCoordinates,
+    eventCoordinatesError: state.event.eventCoordnatesError,
   }
 }
 
 const composedComponent = compose(
   reduxForm({ form: 'CreateEvent'}),
-  connect(mapStateToProps, { getUserEvents })
+  connect(mapStateToProps, { getUserEvents, selectEvent, selectedEvent })
 )(CreateEvent)
 
 export default requireAuth(composedComponent)

@@ -1,55 +1,29 @@
-body {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-}
-.sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    position: relative;
-    height: 100%;
-    overflow: auto;
-}
-.sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-}
-.sidebar a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-.sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-}
-/*div.content {*/
-/*    margin-left: 200px;*/
-/*    padding: 1px 16px;*/
-/*    height: 1000px;*/
-/*}*/
-@media screen and (max-width: 1080px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-}
-@media screen and (max-width: 786px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
-    }
+
+.view-attending {
+    height: 500px !important;
+    overflow: scroll;
+    scroll-behavior: smooth !important;
+    white-space: nowrap;
+    /* width: 800px; */
+    border: 20px solid #000000;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.95)!important;
+    border-radius: 5px !important;
+  /*background-color: #4CAF50 !important;*/
+  
+    /*background-size: cover !important;*/
+  
+  }
+
+.sidebar-user {
+font-size: 16px;
+    font-family: 'Merriweather', serif;
+    background-color: indianred !important;
+    /*text-transform: uppercase;*/
+    text-transform: capitalize;
 }
 
-@media screen and (max-width: 400px) {
-    .sidebar a {
-        text-align: center;
-        float: none;
-    }
+.attending-main-div {
+    margin-bottom: 25px;
 }
-

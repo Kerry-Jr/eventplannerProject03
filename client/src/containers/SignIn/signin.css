@@ -2,3 +2,38 @@
 /*    background-color: whitesmoke;*/
 /*    background-size: cover;*/
 /*}*/
+
+
+.sign-in-icon { 
+  color: ghostwhite;
+  border: 2px solid white;
+  box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.85)!important;
+}
+
+/*body {*/
+/*  background-image:url(https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);*/
+/*  background-size: cover;*/
+/*  background-attachment: fixed;*/
+/*}*/
+
+body {
+  background-image:url(https://images.wallpaperscraft.com/image/san_francisco_usa_buildings_sky_bridge_night_118204_3840x2160.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*background-image:url(https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg);*/
+
+.ui.grid>.row {
+  margin-bottom: 300px;
+}
+
+.ui.horizontal.divider {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.ui.stacked.segment {
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.85)!important;
+}

@@ -11,6 +11,8 @@ export const GET_ALL_TODOS_ERROR = 'GET_ALL_TODOS_ERROR';
 export const GET_USER_TODOS = 'GET_USER_TODOS';
 export const GET_USER_TODOS_ERROR = 'GET_USER_TODOS_ERROR';
 
+export const GET_COORDINATES = 'GET_COORDINATES';
+export const GET_COORDINATES_ERROR = 'GET_COORDINATES_ERROR'
 
 export const ADD_USER_TODO = 'ADD_USER_TODO';
 export const ADD_USER_TODO_ERROR = 'ADD_USER_TODO_ERROR';
@@ -47,3 +49,13 @@ export const POST_MESSAGE_ERROR = 'POST_MESSAGE_ERROR';
 // Get messages action types
 export const GET_MESSAGE = 'GET_MESSAGE';
 export const GET_MESSAGE_ERROR = 'GET_MESSAGE_ERROR';
+
+export const POST_TASK = 'POST_TASK';
+export const POST_TASK_ERROR = 'POST_TASK_ERROR';
+
+export const GET_TASK = 'GET_TASK';
+export const GET_TASK_ERROR = 'GET_TASK_ERROR';
+
+// for getting the user's model db for profile page
+export const GET_USER_INFO = 'GET_USER_INFO';
+export const GET_USER_INFO_ERROR = 'GET_USER_INFO_ERROR';

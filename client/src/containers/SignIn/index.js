@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { Form, Segment, Button } from 'semantic-ui-react';
+import { Form, Segment, Button, Header, Icon, Grid, Container } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
 import './signin.css'
-
+import { withRouter, Link } from 'react-router-dom';
+import HorizontalDivider from './../../components/HorizontalDivider';
 
 
 class SignIn extends Component {
@@ -15,7 +16,8 @@ class SignIn extends Component {
       const { data } = await axios.post('/api/auth/signin', formValues);
       localStorage.setItem('token', data.token);
       dispatch({ type: AUTH_USER, payload: data.token });
-      this.props.history.push('/eventsdashboard');
+      // this.props.history.push('/eventsdashboard');
+      this.props.history.push('/usertodos');
     } catch (e) {
       throw new SubmissionError({
         email: 'Wrong email',
@@ -58,39 +60,55 @@ class SignIn extends Component {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
   <div className='image'>
-      <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
-        <Segment stacked>
-          <Field
-            name='email'
 
-            component={this.renderEmail}
-            validate={
-              [
-                required({ msg: 'Email is required' }),
-                email({ msg: 'You must provide a valid email address' })
-              ]
+      <Container>
+        <div>
+          <Header as='h2' icon textAlign='center'>
+            <Icon name='sign in' circular size='massive' className='sign-in-icon'/>
+            <HorizontalDivider title="Sign In"/>
+          </Header>
 
-            }
-          />
-          <Field
-            name='password'
-            component={this.renderPassword}
-            validate={
-              [
-                required({ msg: 'You must provide a password' })
-              ]
-            }
-          />
-          <Button
-            content='Sign In'
-            color='purple'
-            fluid
-            size='large'
-            type='submit'
-            disabled={ invalid || submitting || submitFailed }
-          />
-        </Segment>
-      </Form>
+          <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
+            <Segment stacked>
+              <Field
+              
+                name='email'
+
+                component={this.renderEmail}
+                validate={
+                  [
+                    required({ msg: 'Email is required' }),
+                    email({ msg: 'You must provide a valid email address' })
+                  ]
+
+                }
+              />
+              <Field
+                name='password'
+                component={this.renderPassword}
+                validate={
+                  [
+                    required({ msg: 'You must provide a password' })
+                  ]
+                }
+              />
+              <p>Don't have an account?  Click <Link to="/signup">here</Link> to sign up!</p>
+              <Button
+                content='Sign In'
+                color='purple'
+                // fluid
+                size='large'
+                type='submit'
+                disabled={ invalid || submitting || submitFailed }
+              />
+            </Segment>
+          </Form>
+        </div>
+      </Container>
+      
+      
+
+      
   </div>
     )
   }
