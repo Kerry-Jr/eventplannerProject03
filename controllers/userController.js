@@ -24,7 +24,7 @@ module.exports = {
     } catch (e) {
       return res.status(403).json({ e });
     }
-  },
+   },
 
   addEvent: async (req, res) => {
     const { data } = req.body;
