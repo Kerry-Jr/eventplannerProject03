@@ -20,7 +20,7 @@ app.use(routes);
 require("./services/passport");
 
 // Connect database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/events", {
+mongoose.connect(process.env.MONGO_CONNECTION || "mongodb://localhost/events", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
