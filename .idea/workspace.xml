@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17e29a7f-ed35-4639-b201-8c07d1d60bdf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project03.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project03.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/EventDetails/eventdetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EventDetails/eventdetails.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GoogleMap/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GoogleMap/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/App/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/App/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/App/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/App/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/containers/Profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/containers/Profile/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/authRoutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/authRoutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/eventRoutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/eventRoutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/messageRoutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/messageRoutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/profile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/taskRoutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/taskRoutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/todoRoutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/todoRoutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/apiRoutes/userTodoRoutes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/apiRoutes/userTodoRoutes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="17e29a7f-ed35-4639-b201-8c07d1d60bdf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +24,10 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -64,10 +41,24 @@
       <workItem from="1591895022508" duration="27000" />
       <workItem from="1591895960800" duration="12000" />
       <workItem from="1591895984411" duration="12000" />
+      <workItem from="1596166659978" duration="19000" />
     </task>
     <servers />
   </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <option name="shellPath" value="C:\Program Files\Git\bin\bash.exe" />
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1060" y="440" key="FileChooserDialogImpl" timestamp="1596166676421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="440" key="FileChooserDialogImpl/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1596166676421" />
+    <state x="811" y="344" key="SettingsEditor" timestamp="1596166678281">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="811" y="344" key="SettingsEditor/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1596166678281" />
   </component>
 </project>
